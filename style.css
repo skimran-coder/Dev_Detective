@@ -1,0 +1,146 @@
+:root {
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--lm-bg);
+}
+
+.container{
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.theme{
+    display: flex;
+    gap: 2rem;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.theme img{
+    width: 1rem;
+    object-fit: contain;
+}
+
+main{
+    margin-top: 4rem;
+}
+
+.search-container{
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.search-icon{
+    position: absolute;
+    z-index: 1;
+    left: 2%;
+    width: 1.25rem;
+}
+
+.search-bar{
+    position: absolute;
+    width: 100%;
+    padding-left: 8%;
+    height: 4rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.2rem;
+    padding-right: 20%;
+}
+
+.search-bar::placeholder{
+    font-size: 1.2rem;
+}
+
+.search-bar:focus{
+    outline: none;
+}
+
+.search-btn{
+    position: absolute;
+    z-index: 1;
+    right: 2%;
+    background-color: var(--btn);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    color: var(--lm-bg-content);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-btn:hover{
+    background-color: var(--btn-hover);
+}
+
+.profile-container{
+    margin-top: 3.5rem;
+    display: flex;
+    padding: 2rem 1rem;
+    background-color: white
+
+}
+
+.avatar{
+    width: 7.313rem;
+    border-radius: 100%;
+    height: 7.313rem;
+    margin-left: 1rem;
+}
+
+.profile-info-section{
+    margin-left: 3rem;
+}
+
+.profile-name-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-bio{
+    margin-top: 3rem;
+}
+
+.profile-stats{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-links{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
