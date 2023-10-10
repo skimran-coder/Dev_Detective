@@ -12,6 +12,7 @@ const locationInfo = document.querySelector('.location-text')
 const website = document.querySelector('.web-link')
 const twitter = document.querySelector('.twitter-link')
 const company = document.querySelector('.company-text')
+const theme = document.querySelector('.theme')
 
 const url = "https://api.github.com/users/"
 const deafaultValue = "skimran-coder"
@@ -58,7 +59,7 @@ function displayInfo(result){
     userName.href = result?.html_url
     joiningDate.innerText = `Joined ${result?.created_at}`
     profileBio.innerText = result?.bio
-    repos.innerText = result?.public_repos
+    repos.innerText = result?.public_repos 
     followers.innerText = result?.followers
     following.innerText = result?.followers
     locationInfo.innerText = result?.location
@@ -71,4 +72,15 @@ function displayInfo(result){
 
 searchBtn.addEventListener('click', findUser)
 
+input.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13 || e.key === 'Enter') {
+        findUser()
+    }
+})
+
+function toggleTheme(){
+    document.body.classList.toggle('dark-mode')
+}
+
+theme.addEventListener('click', toggleTheme)
 

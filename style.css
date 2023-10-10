@@ -1,3 +1,14 @@
+.dark-mode {
+    --lm-bg: #1e1e1e; /* Dark mode background */
+    --lm-bg-content: #2a2a2a; /* Dark mode content background */
+    --lm-text: #ffffff; /* Dark mode text color */
+    --lm-text-alt: #bbbbbb; /* Dark mode alternate text color */
+    --lm-shadow: 0px 16px 30px -10px rgba(0, 0, 0, 0.2); /* Dark mode shadow */
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2); /* Dark mode shadow for inactive elements */
+    --lm-icon-bg: brightness(70%); /* Dark mode icon background */
+}
+
+
 :root {
     --lm-bg: #f6f8ff;
     --lm-bg-content: #fefefe;
@@ -38,11 +49,22 @@ header{
     margin-top: 3rem;
 }
 
+.title{
+    font-size: 1.6rem;
+    color: var(--lm-text);
+}
+
 .theme{
     display: flex;
     gap: 2rem;
     /* justify-content: space-between; */
     align-items: center;
+}
+
+.theme-text{
+    font-size: 1rem;
+    color: var(--lm-text-alt);
+    
 }
 
 .theme img{
@@ -77,6 +99,7 @@ main{
     border-radius: 0.75rem;
     font-size: 1.2rem;
     padding-right: 20%;
+    background-color: var(--lm-bg-content);
 }
 
 .search-bar::placeholder{
@@ -98,6 +121,7 @@ main{
     color: var(--lm-bg-content);
     font-weight: bold;
     cursor: pointer;
+    color: white;
 }
 
 .search-btn:hover{
@@ -106,10 +130,12 @@ main{
 
 .profile-container{
     margin-top: 3.5rem;
+    max-height: 500px;
     display: flex;
     padding: 2rem 1rem;
-    background-color: white
-
+    background-color: var(--lm-bg-content);
+    border-radius: 0.75rem;
+    color: var(--lm-text);
 }
 
 .avatar{
@@ -121,11 +147,22 @@ main{
 
 .profile-info-section{
     margin-left: 3rem;
+    margin-right: 2rem;
 }
 
 .profile-name-section{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.name{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.joining-date{
+    font-size: 0.75rem;
 }
 
 .profile-bio{
@@ -143,4 +180,19 @@ main{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+}
+
+.links{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: rgb(34, 159, 255);
+}
+
+.icons{
+    background-color: var(--lm-icon-bg);
 }
