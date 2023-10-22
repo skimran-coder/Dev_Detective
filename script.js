@@ -13,6 +13,8 @@ const website = document.querySelector('.web-link')
 const twitter = document.querySelector('.twitter-link')
 const company = document.querySelector('.company-text')
 const theme = document.querySelector('.theme')
+const themeText = document.querySelector('.theme-text')
+const themeIcon = document.querySelector('.theme-icon')
 
 const url = "https://api.github.com/users/"
 const deafaultValue = "skimran-coder"
@@ -52,12 +54,19 @@ async function findUser(){
     }
 }
 
+function formatJoiningDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, options);
+}
+
+
 function displayInfo(result){
     avatar.src = result?.avatar_url
     profileName.innerText = result?.name
     userName.innerText = result?.login
     userName.href = result?.html_url
-    joiningDate.innerText = `Joined ${result?.created_at}`
+    joiningDate.innerText = `Joined ${formatJoiningDate(result?.created_at)}`;
     profileBio.innerText = result?.bio
     repos.innerText = result?.public_repos 
     followers.innerText = result?.followers
@@ -80,6 +89,16 @@ input.addEventListener('keydown', (e) => {
 
 function toggleTheme(){
     document.body.classList.toggle('dark-mode')
+    if (themeText.innerText === "Dark") {
+        themeText.innerText = "Light"
+        themeText.style = "color: white"
+        themeIcon.src = 'assets/images/sun-icon.svg'
+    }
+    else{
+        themeText.innerText = "Dark"
+        themeIcon.src = 'assets/images/moon-icon.svg'
+        themeText.style = "color: var(--lm-text-alt)"
+    }
 }
 
 theme.addEventListener('click', toggleTheme)
