@@ -2,6 +2,12 @@
 
 Dev Detective is a web application that allows you to search for GitHub user profiles and view their information. It provides a user-friendly interface to quickly access a user's GitHub details.
 
+![Dev Detective](assets/images/devDetective.png)
+
+## Demo
+
+You can try the live demo of this DevDetective [here](https://skimran-coder.github.io/Dev_Detective/).
+
 ## Features
 
 - **GitHub User Search**: Enter a GitHub username in the search bar to view a user's profile.
